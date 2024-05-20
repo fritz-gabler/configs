@@ -23,6 +23,7 @@ alias exam='cd /Users/fgabler/Documents/42_exercise/Exam'
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cclean='bash ~/Cleaner_42.sh'
 alias see_space="du -h -d 2 ./* | sort -hr > analyze.log && cat analyze.log && rm analyze.log"
+alias lg="lazygit"
 
 #NVIM
 alias nvim="$HOME/nvim-macos/bin/nvim"
