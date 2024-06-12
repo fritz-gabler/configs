@@ -45,6 +45,32 @@ alias dv='docker run -ti -v $PWD:/code -v "/Users/fgabler/.docker_valgrind_setup
 #CPP SETUP
 alias create='bash ~/bashScripts/cppBash/createCppBasicStructure.sh'
 
+#TURN ON AUTO COMPLITIONS
+autoload -Uz compinit && compinit
+
+zstyle ':completion:*' use-cache true # Cache completion to `${ZDOTDIR}/.zcompcache`.
+zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys.
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Use LS_COLORS for completion colors.
+#enable colors for ls, etc.
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+#-------------------GIT-----------------------------------#
+
+# PROMPT
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/\1/p'
+}
+COLOR_DEF=$'%f'
+COLOR_USR=$'%F{243}'
+COLOR_DIR=$'%F{45}'
+COLOR_GIT=$'%F{36}'
+setopt PROMPT_SUBST
+export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} > '
+
+# better git log
+alias gl="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+
 #---------------------------------------#
 
 #eval "$(starship init zsh)"
