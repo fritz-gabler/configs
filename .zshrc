@@ -78,6 +78,8 @@ alias gll="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bo
 #--------------EXPROT--------------------#
 export PATH=$HOME/.brew/bin:$PATH
 export PATH=$HOME/goinfre/.brew/bin:$PATH
+CLICOLOR=1
+export CLICOLOR
 #---------------------------------------#
 
 
