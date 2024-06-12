@@ -12,7 +12,7 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
 alias glo='git log --oneline'
-alias gs='git status'
+alias gits='git status'
 alias gsub="git submodule update --init"
 alias gsubup="git submodule update --remote"
 
@@ -23,7 +23,7 @@ alias exam='cd /Users/fgabler/Documents/42_exercise/Exam'
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cclean='bash ~/Cleaner_42.sh'
 alias see_space="du -h -d 2 ./* | sort -hr > analyze.log && cat analyze.log && rm analyze.log"
-alias lg="lazygit"
+alias gs="lazygit"
 
 #NVIM
 alias nvim="$HOME/nvim-macos/bin/nvim"
@@ -67,7 +67,6 @@ fi
 set expandtab
 set tabstop=4
 #!/bin/zsh
-
 
 # Dorker commands
 #source /Users/fgabler/Documents/42_exercise/Dorker/init.sh
