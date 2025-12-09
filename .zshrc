@@ -4,6 +4,12 @@ alias francinette=/Users/fgabler/francinette/tester.sh
 alias paco=/Users/fgabler/francinette/tester.sh
 #------------------------------------------#
 
+PROMPT='%F{#41393a}%n%F{#00fff7}@%m %~ %# %f'
+
+
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#aaaaaa'
+
 
 #--------------ALIAS----------------------#
 
@@ -17,19 +23,19 @@ alias gsub="git submodule update --init"
 alias gsubup="git submodule update --remote"
 
 #DAY TO DAY
-alias j='cd /Users/fgabler/Documents/42_exercise/projects'
-alias eval='cd /Users/fgabler/Documents/42_exercise/Eval'
-alias exam='cd /Users/fgabler/Documents/42_exercise/Exam'
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+alias j='cd /Users/fritzgabler/Documents/megaProjects'
+alias ev='cd /Users/fgabler/Documents/42_exercise/Eval'
+alias exam='cd /Users/fritzgabler/Documents/42/exam'
+alias code="'/Volumes/Macintosh HD/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
 alias cclean='bash ~/Cleaner_42.sh'
 alias see_space="du -h -d 2 ./* | sort -hr > analyze.log && cat analyze.log && rm analyze.log"
 alias gs="lazygit"
+alias tree='find . -path "*/.git*" -prune -o -print | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"'
+#bear -- make
+
 
 #NVIM
-alias nvim="$HOME/nvim-macos/bin/nvim"
-alias nvim="$HOME/nvim-macos/bin/nvim"
-alias vim="$HOME/nvim-macos/bin/nvim"
-alias n="$HOME/nvim-macos/bin/nvim"
+alias n="/opt/homebrew/bin/nvim"
 alias s='fg'
 
 alias mstest="bash /Users/fgabler/42_minishell_tester/tester.sh"
@@ -44,6 +50,7 @@ alias dv='docker run -ti -v $PWD:/code -v "/Users/fgabler/.docker_valgrind_setup
 
 #CPP SETUP
 alias create='bash ~/bashScripts/cppBash/createCppBasicStructure.sh'
+alias sP='bash ~/bashScripts/basic_nvim_setup/add_basic_nvim_setup.sh'
 
 #TURN ON AUTO COMPLITIONS
 autoload -Uz compinit && compinit
@@ -53,6 +60,9 @@ zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Use LS_COLORS for completion colors.
 #enable colors for ls, etc.
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+# PYTHON
+alias py='python3'
 
 #-------------------GIT-----------------------------------#
 
@@ -80,14 +90,16 @@ export PATH=$HOME/.brew/bin:$PATH
 export PATH=$HOME/goinfre/.brew/bin:$PATH
 CLICOLOR=1
 export CLICOLOR
+export PATH=~/.npm-global/bin:$PATH
 #---------------------------------------#
 
 
 #---------------USER---------------------#
-PATH="$HOME/homebrew/bin:$PATH"
-USER=fgabler
+USER=fritzgabler
 MAIL=fritzlmgaebler@gmail.com
 #---------------------------------------#
+
+export PATH="$HOME/.local/bin:$PATH"
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then  exec tmux
 fi
@@ -100,3 +112,10 @@ set tabstop=4
 #source /Users/fgabler/Documents/42_exercise/Dorker/init.sh
 
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# API KEY
+export OPENROUTER_API_KEY="$(< ~/.config/nvim/.open_router_api_key)"
