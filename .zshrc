@@ -95,10 +95,8 @@ export PATH=~/.npm-global/bin:$PATH
 
 
 #---------------USER---------------------#
-USER=fritzgabler
-MAIL=fritzlmgaebler@gmail.com
-let g:user42 = 'fgabler'
-let g:mail42 = 'notMyEmail@student.42.fr'
+USER=fgabler
+MAIL=notMyMail@student.42.fr
 #---------------------------------------#
 
 export PATH="$HOME/.local/bin:$PATH"
